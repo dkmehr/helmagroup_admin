@@ -166,7 +166,7 @@ router.get('/get-product',auth, async (req,res)=>{
             if(result[i]){ 
                 var sku = result[i].ProductCode//?result[i].ProductCode:result[i].Code
             outPut.push(result[i])
-            var query = {title:result[i].SalesTitle,
+            var query = {title:result[i].Title,
                 sku:sku,
                 ItemID:result[i].Code,
                 unit:result[i].Unit,
