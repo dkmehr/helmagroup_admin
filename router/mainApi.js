@@ -177,7 +177,7 @@ router.get('/get-product',auth, async (req,res)=>{
                 nodeName:result[i].NodeName,
                 active:result[i].Active,
                 priceList:result[i].PriceList}
-            var updateResult = await products.updateOne({sku:sku},
+            var updateResult = await products.updateOne({ItemID:result[i].Code},
                 {$set:query}
             )
             var newItem = []
