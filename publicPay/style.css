@@ -1,0 +1,76 @@
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.main-cart {
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: lightgray;
+}
+
+.main-cart h1 {
+  margin-block: 1rem;
+}
+.main-cart p {
+  font-size: 1.2rem;
+}
+
+.main-cart a {
+  padding: 1rem;
+  border-radius: 9999px;
+  background-color: lightgreen;
+  min-width: 250px;
+  text-align: center;
+  font-weight: 800;
+  margin-top: 2rem;
+}
