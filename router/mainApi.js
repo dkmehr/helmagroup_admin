@@ -177,14 +177,14 @@ router.get('/get-product',auth, async (req,res)=>{
                 nodeName:result[i].NodeName,
                 active:result[i].Active,
                 priceList:result[i].PriceList}
-            var updateResult = await products.updateOne({ItemID:result[i].Code},
+            var updateResult = await products.updateOne({sku:sku},
                 {$set:query}
             )
             var newItem = []
             try{if(!updateResult.matchedCount){
-                var repeatResult = await products.findOne({ItemID:result[i].Code})
+                var repeatResult = await products.findOne({sku:sku})//ItemID:result[i].Code})
                 if(repeatResult){
-                    var updateResult = await products.updateOne({ItemID:result[i].Code},
+                    var updateResult = await products.updateOne({sku:sku},//ItemID:result[i].Code},
                 {$set:query})
                 }
                 else{
