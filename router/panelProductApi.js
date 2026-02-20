@@ -282,6 +282,8 @@ router.post('/editProduct',jsonParser,async(req,res)=>{
             sort: req.body.sort,
             imageUrl:  req.body.imageUrl,
             thumbUrl:  req.body.thumbUrl,
+            gallery:req.body.gallery,
+            similar:req.body.similar,
             range:req.body.range,
             isMaster:req.body.isMaster,
             rangeText:req.body.rangeText

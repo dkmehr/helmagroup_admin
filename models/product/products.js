@@ -10,6 +10,8 @@ const ProductSchema = new Schema({
     weight:String,
     imageUrl: {type:String},
     thumbUrl: {type:String},
+    gallery: {type:Array},
+    similar: {type:Array},
     offer:Boolean,
     description:String,
     productUrl:String,
