@@ -195,7 +195,7 @@ router.post('/fetch-product',jsonParser,async (req,res)=>{
             res.json({filter:{}})
             return
         } 
-        const productData = await ProductSchema.findOne({_id: ObjectID(productId)})
+        const productData = await ProductSchema.findOne({_id: ObjectID(productId)}).lean()
         if(!productData){
             res.json({filter:{}})
             return
