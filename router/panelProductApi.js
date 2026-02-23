@@ -34,6 +34,7 @@ const UpdateMarket = require('../middleware/UpdateMarket');
 const crmlist = require('../models/crm/crmlist');
 const multer = require('multer');
 const Colors = require('../models/product/Colors');
+const FindSimilar = require('../middleware/Functions/FindSimilar')
 
 router.post('/fetch-service',jsonParser,async (req,res)=>{
     var serviceId = req.body.serviceId?req.body.serviceId:''
@@ -208,6 +209,9 @@ router.post('/fetch-product',jsonParser,async (req,res)=>{
         const filterList = //catData?
             await Filters.find()//{"category._id":catData._id.toString()}):''
        
+        const similarData = await FindSimilar(productData.similar)
+        productData.similarData = similarData
+
         res.json({filter:productData,brandList:brandList,categoryList:categoryList,
         brandData:brandData,catData:catData,filterList:filterList})
     }
